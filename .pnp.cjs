@@ -27,14 +27,17 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@popperjs/core", "npm:2.11.8"],\
           ["@rushstack/eslint-patch", "npm:1.10.4"],\
           ["@tsconfig/node20", "npm:20.1.4"],\
+          ["@types/bootstrap", "npm:5.2.10"],\
           ["@types/node", "npm:20.16.1"],\
           ["@vitejs/plugin-vue", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:5.1.2"],\
           ["@vue/compiler-sfc", "npm:3.4.38"],\
           ["@vue/eslint-config-prettier", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:9.0.0"],\
           ["@vue/eslint-config-typescript", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:13.0.0"],\
           ["@vue/tsconfig", "npm:0.5.1"],\
+          ["bootstrap", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:5.3.3"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-plugin-vue", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:9.27.0"],\
           ["npm-run-all2", "npm:6.2.2"],\
@@ -490,6 +493,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@popperjs/core", [\
+      ["npm:2.11.8", {\
+        "packageLocation": "../../.yarn/berry/cache/@popperjs-core-npm-2.11.8-f1692e11a0-10c0.zip/node_modules/@popperjs/core/",\
+        "packageDependencies": [\
+          ["@popperjs/core", "npm:2.11.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@rollup/rollup-android-arm-eabi", [\
       ["npm:4.21.0", {\
         "packageLocation": "./.yarn/unplugged/@rollup-rollup-android-arm-eabi-npm-4.21.0-b35205cfee/node_modules/@rollup/rollup-android-arm-eabi/",\
@@ -648,6 +660,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@tsconfig-node20-npm-20.1.4-34948615bc-10c0.zip/node_modules/@tsconfig/node20/",\
         "packageDependencies": [\
           ["@tsconfig/node20", "npm:20.1.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/bootstrap", [\
+      ["npm:5.2.10", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-bootstrap-npm-5.2.10-d5d4ae4dbf-10c0.zip/node_modules/@types/bootstrap/",\
+        "packageDependencies": [\
+          ["@types/bootstrap", "npm:5.2.10"],\
+          ["@popperjs/core", "npm:2.11.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1325,6 +1347,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/boolbase-npm-1.0.0-965fe9af6d-10c0.zip/node_modules/boolbase/",\
         "packageDependencies": [\
           ["boolbase", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["bootstrap", [\
+      ["npm:5.3.3", {\
+        "packageLocation": "../../.yarn/berry/cache/bootstrap-npm-5.3.3-da08e2f0fe-10c0.zip/node_modules/bootstrap/",\
+        "packageDependencies": [\
+          ["bootstrap", "npm:5.3.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:5.3.3", {\
+        "packageLocation": "./.yarn/__virtual__/bootstrap-virtual-0362b0960d/3/.yarn/berry/cache/bootstrap-npm-5.3.3-da08e2f0fe-10c0.zip/node_modules/bootstrap/",\
+        "packageDependencies": [\
+          ["bootstrap", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:5.3.3"],\
+          ["@popperjs/core", "npm:2.11.8"],\
+          ["@types/popperjs__core", null]\
+        ],\
+        "packagePeers": [\
+          "@popperjs/core",\
+          "@types/popperjs__core"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3268,14 +3312,17 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["test-workframe", "workspace:."],\
+          ["@popperjs/core", "npm:2.11.8"],\
           ["@rushstack/eslint-patch", "npm:1.10.4"],\
           ["@tsconfig/node20", "npm:20.1.4"],\
+          ["@types/bootstrap", "npm:5.2.10"],\
           ["@types/node", "npm:20.16.1"],\
           ["@vitejs/plugin-vue", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:5.1.2"],\
           ["@vue/compiler-sfc", "npm:3.4.38"],\
           ["@vue/eslint-config-prettier", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:9.0.0"],\
           ["@vue/eslint-config-typescript", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:13.0.0"],\
           ["@vue/tsconfig", "npm:0.5.1"],\
+          ["bootstrap", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:5.3.3"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-plugin-vue", "virtual:9b63e7dad314328a2f37c9c00f9fd136d6ed9633d5ee9f3fa72ae93f35a44b129f14662627b6463b418c7b5c01ac50330de0ba112685d1a7139b23ecad51f276#npm:9.27.0"],\
           ["npm-run-all2", "npm:6.2.2"],\
