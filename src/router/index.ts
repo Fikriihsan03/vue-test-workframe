@@ -1,14 +1,15 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 
-const token = false
-const ifAuthenticated = (to, from, next) => {
+const token = true
+const ifAuthenticated = (to: any, from: any, next: any) => {
   if (token) {
     next()
     return
   }
   next('/login')
 }
-const ifNotAuthenticated = (to, from, next) => {
+const ifNotAuthenticated = (to: any, from: any, next: any) => {
   if (!token) {
     next()
     return
