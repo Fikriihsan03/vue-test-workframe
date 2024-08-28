@@ -1,6 +1,6 @@
 <template>
   <!-- <VaButton :style="customStyles" @click="onClick"> {{ text }} </VaButton> -->
-  <VaInput v-model="value" @input="handleInput" :placeholder="placeHolder" :style="customStyles" />
+  <VaInput @input="handleInput" :placeholder="placeHolder" :style="customStyles" />
 </template>
 
 <script setup lang="ts">
@@ -11,7 +11,7 @@ interface IProps {
   value: string | number
   width?: string
   borderRadius?: string
-  onChange: () => void
+  onChange: (value: string | number) => void
 }
 
 const { appContext } = getCurrentInstance()!
@@ -25,14 +25,12 @@ const props = withDefaults(defineProps<IProps>(), {})
 
 const customStyles = computed(
   (): CSSProperties => ({
-    width: props.width || '0px',
+    width: props.width || '100%',
     borderRadius: props.borderRadius || '0px'
   })
 )
+
 const handleInput = (event: Event) => {
-  const input = event.target as HTMLInputElement
-  emit('update:value', input.value)
-  emit('change', event) // Emit event change ke parent
-  //   this.onChange(event) // Panggil onChange dari props jika disediakan
+  props.onChange(event?.target?.value) // Panggil onChange dari props jika disediakan
 }
 </script>
