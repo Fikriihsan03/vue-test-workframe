@@ -6,10 +6,11 @@ import App from './App.vue'
 import themes from '@/assets/themes'
 import router from '@/router'
 
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap"
+import { createVuestic } from "vuestic-ui";
+import "vuestic-ui/css";
 
 const app = createApp(App)
 app.config.globalProperties.$themes = themes
 app.use(router)
+app.use(createVuestic())
 app.mount('#app')

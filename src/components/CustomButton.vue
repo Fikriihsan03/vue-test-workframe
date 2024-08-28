@@ -1,16 +1,15 @@
 <template>
-  <p :style="customStyles">{{ props.content }}</p>
+  <VaButton :style="customStyles" @click="onClick"> {{ text }} </VaButton>
 </template>
 
 <script setup lang="ts">
 import { getCurrentInstance, computed } from 'vue'
 import type { CSSProperties } from 'vue'
 interface IProps {
-  content: string
-  textAlign: 'left' | 'right' | 'center' | 'justify'
+  text: string
   color?: string
-  fontStyle?: string
-  fontWeight?: number
+  borderRadius?: string
+  onClick: () => void
 }
 
 const { appContext } = getCurrentInstance()!
@@ -19,11 +18,8 @@ const props = defineProps<IProps>()
 
 const customStyles = computed(
   (): CSSProperties => ({
-    fontSize: themes.fontSizes.subBody,
-    fontWeight: props.fontWeight || 500,
-    textAlign: props.textAlign,
-    color: props.color || 'black',
-    fontStyle: props.fontStyle || 'normal'
+    color: props.color || 'white',
+    borderRadius: props.borderRadius || '0px'
   })
 )
 </script>
