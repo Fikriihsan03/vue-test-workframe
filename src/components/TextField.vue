@@ -11,15 +11,14 @@ interface IProps {
   value: string | number
   width?: string
   borderRadius?: string
-  onChange: (value: string | number) => void
+  // onChange: (value: string | number) => void & ((event: Event) => any)
 }
 
 const { appContext } = getCurrentInstance()!
 const themes = appContext.config.globalProperties.$themes
 
 const emit = defineEmits<{
-  (e: 'update:value', value: string | number): void
-  (e: 'change', event: Event): void
+  (e: 'onChange', value: string | number): void
 }>()
 const props = withDefaults(defineProps<IProps>(), {})
 
@@ -30,7 +29,8 @@ const customStyles = computed(
   })
 )
 
-const handleInput = (event: Event) => {
-  props.onChange(event?.target?.value) // Panggil onChange dari props jika disediakan
+const handleInput = (event: any) => {
+  const input = event.target as HTMLInputElement
+  emit('onChange', input.value)
 }
 </script>

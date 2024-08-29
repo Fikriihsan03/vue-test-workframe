@@ -14,7 +14,7 @@
         <VaButton :color="themes.colors.background" @click="handleCancel">{{
           cancelText
         }}</VaButton>
-        <VaButton :color="themes.colors.error" @click="handleConfirm">{{ deleteText }}</VaButton>
+        <VaButton :color="themes.colors.primary" @click="handleConfirm">{{ confirmText }}</VaButton>
       </div>
     </template>
   </VaModal>
@@ -28,7 +28,7 @@ interface IProps {
   title: string
   description: string
   cancelText?: string
-  deleteText?: string
+  confirmText?: string
   onCancel: () => void
   onConfirm: () => void
 }
@@ -38,7 +38,7 @@ const themes = appContext.config.globalProperties.$themes
 
 const props = withDefaults(defineProps<IProps>(), {
   cancelText: 'Cancel',
-  deleteText: 'Delete'
+  confirmText: 'Confirm'
 })
 let isModalShow = ref(false)
 const titleCustomStyle = computed(
