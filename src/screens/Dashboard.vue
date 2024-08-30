@@ -29,7 +29,8 @@ import CustomButton from '@/components/CustomButton.vue'
 import TextField from '@/components/TextField.vue'
 import DeleteModal from '@/components/DeleteModal.vue'
 import FunctionModal from '@/components/FunctionModal.vue'
-import { ref, type ComponentPublicInstance } from 'vue'
+import { onMounted, ref, type ComponentPublicInstance } from 'vue'
+import PublicDataServices from '@/services/PublicDataService'
 
 const inputVal = ref('')
 const testDeleteModal = ref<ComponentPublicInstance<{
@@ -61,4 +62,16 @@ const openFunctionModalHandler = () => {
 const testFunc = () => {
   console.log('hit')
 }
+
+const retrieveSomething = async () => {
+  try {
+    const response = await PublicDataServices.getProvinces('test')
+    console.log(response.data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+onMounted(() => {
+  retrieveSomething()
+})
 </script>
