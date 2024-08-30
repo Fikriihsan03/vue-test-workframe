@@ -33,6 +33,9 @@
       <VaPagination v-model="tableProps.page" :pages="15" :visible-pages="4" class="justify-center sm:justify-start"
         style="margin-top:2rem" />
     </div>
+
+    <CustomSkeleton :isShow="isSkeletonShow" />
+
   </div>
 </template>
 
@@ -41,12 +44,14 @@ import TextTitle from '@/components/Texts/TextTitle.vue'
 import CustomButton from '@/components/CustomButton.vue'
 import CustomTable from '@/components/CustomTable.vue'
 import TextField from '@/components/TextField.vue'
-import DeleteModal from '@/components/DeleteModal.vue'
-import FunctionModal from '@/components/FunctionModal.vue'
+import CustomSkeleton from '@/components/CustomSkeleton.vue'
+import DeleteModal from '@/components/Modals/DeleteModal.vue'
+import FunctionModal from '@/components/Modals/FunctionModal.vue'
 import { onMounted, reactive, ref, type ComponentPublicInstance } from 'vue'
 import PublicDataServices from '@/services/PublicDataService'
 
 const inputVal = ref('')
+const isSkeletonShow = ref(true)
 const tableProps = reactive({
   page: 1,
   perPage: 10,
