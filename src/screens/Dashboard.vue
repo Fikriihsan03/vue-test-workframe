@@ -5,20 +5,35 @@
     <br />
     <TextField :value="inputVal" placeHolder="Test Input" @onChange="inputHandler" />
     <CustomButton text="Modal" :onClick="openDeleteModalHandler" />
-    <DeleteModal ref="testDeleteModal" title="test Delete Modal" description="Halo ini mau di delete"
-      :onCancel="closeModalHandler" :onConfirm="closeModalHandler" />
+    <DeleteModal
+      ref="testDeleteModal"
+      title="test Delete Modal"
+      description="Halo ini mau di delete"
+      :onCancel="closeModalHandler"
+      :onConfirm="closeModalHandler"
+    />
 
+    <CustomButton text="Toast" :onClick="showToast" />
     <CustomButton text="Modal" :onClick="openFunctionModalHandler" />
 
-    <FunctionModal ref="testFunctionModal" title="test Function Modal" description="Halo ini function modal"
-      :onCancel="closeModalHandler" :onConfirm="closeModalHandler" />
+    <FunctionModal
+      ref="testFunctionModal"
+      title="test Function Modal"
+      description="Halo ini function modal"
+      :onCancel="closeModalHandler"
+      :onConfirm="closeModalHandler"
+    />
 
     <div class="row justify-center">
       <div class="flex flex-col xs12">
         <div class="item">
           <div class="row justify-center">
-            <CustomTable :headers="tableProps.headers" :items='tableProps.items' :page="tableProps.page"
-              :perPage='tableProps.perPage'>
+            <CustomTable
+              :headers="tableProps.headers"
+              :items="tableProps.items"
+              :page="tableProps.page"
+              :perPage="tableProps.perPage"
+            >
               <template #body="{ items }">
                 <tr v-for="user in items" :key="user.id">
                   <td>{{ user.fullName }}</td>
@@ -30,12 +45,16 @@
           </div>
         </div>
       </div>
-      <VaPagination v-model="tableProps.page" :pages="15" :visible-pages="4" class="justify-center sm:justify-start"
-        style="margin-top:2rem" />
+      <VaPagination
+        v-model="tableProps.page"
+        :pages="15"
+        :visible-pages="4"
+        class="justify-center sm:justify-start"
+        style="margin-top: 2rem"
+      />
     </div>
 
     <CustomSkeleton :isShow="isSkeletonShow" />
-
   </div>
 </template>
 
@@ -49,6 +68,7 @@ import DeleteModal from '@/components/Modals/DeleteModal.vue'
 import FunctionModal from '@/components/Modals/FunctionModal.vue'
 import { onMounted, reactive, ref, type ComponentPublicInstance } from 'vue'
 import PublicDataServices from '@/services/PublicDataService'
+import { toast } from 'vue3-toastify'
 
 const inputVal = ref('')
 const isSkeletonShow = ref(true)
@@ -57,9 +77,9 @@ const tableProps = reactive({
   perPage: 10,
   items: [
     { id: 1, fullName: 'John Doe', email: 'john@example.com', country: 'USA' },
-    { id: 1, fullName: 'Lucy Doe', email: 'lucy@example.com', country: 'USA' },
+    { id: 1, fullName: 'Lucy Doe', email: 'lucy@example.com', country: 'USA' }
   ],
-  headers: ['Full Name', 'Email', 'Country'],
+  headers: ['Full Name', 'Email', 'Country']
 })
 const testDeleteModal = ref<ComponentPublicInstance<{
   close: () => void
@@ -99,6 +119,10 @@ const retrieveSomething = async () => {
     console.log(err)
   }
 }
+const showToast = () => {
+  toast.success('Success Notification !')
+}
+
 onMounted(() => {
   retrieveSomething()
 })

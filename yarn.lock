@@ -2903,6 +2903,7 @@ __metadata:
     vue: "npm:^3.4.29"
     vue-router: "npm:4"
     vue-tsc: "npm:^2.0.21"
+    vue3-toastify: "npm:^0.2.3"
     vuestic-ui: "npm:^1.10.0"
   languageName: unknown
   linkType: soft
@@ -3129,6 +3130,18 @@ __metadata:
   bin:
     vue-tsc: ./bin/vue-tsc.js
   checksum: 10c0/3ae818d5370a3a9c53616fb7e43016035ee39a981ab84a35fa7821846a0f12d89d7fad904232093261dd35d97bfca05bf76ca5b4625873057c50cdb3cc1791af
+  languageName: node
+  linkType: hard
+
+"vue3-toastify@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "vue3-toastify@npm:0.2.3"
+  peerDependencies:
+    vue: ">=3.2.0"
+  peerDependenciesMeta:
+    vue:
+      optional: true
+  checksum: 10c0/3e26f6ece4c3abb78d0611a03eae4a217c1bb3a56a41b617e8aa011d67255ed5a5a3fec850c80243934f011b7a821d4026a692675e01863896b6a5dbd12d12fe
   languageName: node
   linkType: hard
 
